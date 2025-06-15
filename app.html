@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Faith Verse Generator</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      text-align: center;
+      padding: 40px;
+      background-color: #fff9f0;
+    }
+    h1 {
+      color: #ba5d00;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #ffb347;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    #verse {
+      margin-top: 30px;
+      font-size: 1.2em;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Bible Verse Generator</h1>
+  <p>Click below for a random scripture about faith.</p>
+  <button onclick="showVerse()">Give Me a Verse</button>
+
+  <div id="verse"></div>
+
+  <br><br>
+  <a href="index.html">← Back to Main Site</a>
+
+  <script>
+    const verses = [
+      "Faith is the substance of things hoped for, the evidence of things not seen. – Hebrews 11:1",
+      "With God all things are possible. – Matthew 19:26",
+      "Trust in the Lord with all your heart. – Proverbs 3:5",
+      "Be still and know that I am God. – Psalm 46:10",
+      "Come unto me all ye that labor and are heavy laden, and I will give you rest. – Matthew 11:28"
+    ];
+    function showVerse() {
+      const v = verses[Math.floor(Math.random() * verses.length)];
+      document.getElementById("verse").textContent = v;
+    }
+  </script>
+</body>
+</html>
