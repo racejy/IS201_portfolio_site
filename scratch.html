@@ -2,49 +2,67 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Scratch Page</title>
+  <title>Scratch Page – Race J. Young</title>
   <link rel="stylesheet" href="css/custom2.css">
 </head>
-<body style="background-color: #f4f9ff;">
+<body>
 
-  <h1 id="top">Welcome to My Scratch Page</h1>
-  <p><a href="#video">Jump to YouTube Video</a></p>
+  <header>
+    <h1 id="top">Welcome to My Scratch Page</h1>
+    <nav>
+      <a href="#skills">Skills</a> |
+      <a href="#video">YouTube</a> |
+      <a href="#tableau">Tableau</a> |
+      <a href="app.html">Web App</a> |
+      <a href="index.html">Back to Home</a>
+    </nav>
+  </header>
 
-  <h2>My Skills (Nested List)</h2>
-  <ol>
-    <li>Tech Stack
-      <ul>
-        <li>Python</li>
-        <li>HTML & CSS</li>
-        <li>Excel / Google Sheets</li>
-      </ul>
-    </li>
-    <li>Soft Skills
-      <ul>
-        <li>Leadership</li>
-        <li>Problem Solving</li>
-        <li>Adaptability</li>
-      </ul>
-    </li>
-  </ol>
+  <section id="skills">
+    <h2>My Skillsets (Nested List)</h2>
+    <ol>
+      <li>Technical Skills
+        <ul>
+          <li>Python, SQL, Excel</li>
+          <li>HTML, CSS, Git</li>
+        </ul>
+      </li>
+      <li>Leadership Skills
+        <ul>
+          <li>Team Management</li>
+          <li>Strategic Planning</li>
+        </ul>
+      </li>
+    </ol>
+  </section>
 
-  <h2>Div Examples</h2>
-  <div class="box">Box #1 - Blue box with padding</div>
-  <div class="box">Box #2 - Same style, different content</div>
-  <div class="box">Box #3 - They prove you know how to style divs</div>
+  <section id="divs">
+    <h2>Styled Sections (Div Examples)</h2>
+    <div class="box">Box 1 – Clean layout, styled with custom CSS.</div>
+    <div class="box">Box 2 – Proves you understand block styling.</div>
+    <div class="box">Box 3 – Plus spacing, padding, and color design.</div>
+  </section>
 
-  <h2>Image</h2>
-  <img src="https://picsum.photos/400" alt="Random image for demo">
+  <section id="image">
+    <h2>Visual Example</h2>
+    <img src="https://picsum.photos/500/300" alt="Example Image">
+  </section>
 
-  <h2 id="video">Embedded YouTube Video</h2>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+  <section id="video">
+    <h2>YouTube Embed</h2>
+    <p>This video represents creative thinking in modern tech and leadership:</p>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+  </section>
 
-  <h2>Tableau Graph</h2>
-  <!-- Replace this with your real Tableau embed link -->
-  <iframe src="https://public.tableau.com/views/YOUR-VIZ-HERE/Dashboard1" width="800" height="600"></iframe>
+  <section id="tableau">
+    <h2>Interactive Tableau Graph</h2>
+    <!-- Replace with your own embed code -->
+    <iframe src="https://public.tableau.com/views/YOUR-VIZ-HERE/Dashboard1" width="800" height="600"></iframe>
+  </section>
 
-  <br><br>
-  <a href="index.html">← Back to Main Site</a>
+  <footer>
+    <p><a href="#top">↑ Back to Top</a></p>
+  </footer>
 
 </body>
 </html>
