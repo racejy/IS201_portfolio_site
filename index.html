@@ -1,46 +1,128 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Race Young | Professional Site</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/custom1.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Race Young Portfolio">
+  <meta name="author" content="Race Young">
+  <title>Race Young | Portfolio</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .featurette-icon {
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+  </style>
 </head>
+
 <body>
-  <div class="container mt-5">
-    <h1 class="mb-4">Race J. Young</h1>
-    <nav class="mb-4">
-      <a href="scratch.html" class="btn btn-outline-primary me-2">Scratch Page</a>
-      <a href="app.html" class="btn btn-outline-success me-2">Web App</a>
-      <a href="https://github.com/racejy" class="btn btn-outline-dark">My GitHub</a>
-    </nav>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Race Young</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="scratch.html">Scratch Page</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="webapp.html">WebApp</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-    <h2>Résumé</h2>
+  <!-- Page Content -->
+  <div class="container mt-5 pt-5">
+    <!-- Heading -->
+    <h1 class="my-4 text-center">Welcome to My Portfolio</h1>
 
-    <h3>Education</h3>
-    <ul>
-      <li><strong>Brigham Young University</strong> – B.S. Pre-Business (Accounting Track), 2023–2027</li>
-      <li>GPA: 3.68 • Clubs: Prelaw, Accounting Society, First-Gen</li>
-    </ul>
+    <!-- Featurettes -->
+    <div class="row text-center">
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <div class="featurette-icon text-primary">🎓</div>
+            <h4 class="card-title">Education</h4>
+            <p class="card-text">Brigham Young University | Info Systems + Finance</p>
+          </div>
+        </div>
+      </div>
 
-    <h3>Experience</h3>
-    <ul>
-      <li><strong>Urim Capital</strong> – Finance Intern (Summer 2023 & 2024)</li>
-      <li><strong>Greg Young Construction</strong> – Financial Specialist & Laborer</li>
-      <li><strong>Keller Young Luxury Homes</strong> – Installation Specialist</li>
-    </ul>
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <div class="featurette-icon text-success">💼</div>
+            <h4 class="card-title">Experience</h4>
+            <p class="card-text">Internships at Urim Capital, CFO for family business, trading Bitcoin options.</p>
+          </div>
+        </div>
+      </div>
 
-    <h3>Leadership & Service</h3>
-    <ul>
-      <li><strong>LDS Mission</strong> – Barcelona, Spain (Assistant to President)</li>
-      <li><strong>Basketball Captain</strong> – Herriman High School</li>
-    </ul>
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <div class="featurette-icon text-warning">🏆</div>
+            <h4 class="card-title">Accomplishments</h4>
+            <p class="card-text">Led startup accounting overhaul, launched crypto club at BYU, studied abroad in Spain.</p>
+          </div>
+        </div>
+      </div>
 
-    <h3>Skills & Interests</h3>
-    <ul>
-      <li>Fluent Spanish, Excel, HTML/CSS, Crypto, Bitcoin, Public Speaking</li>
-    </ul>
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <div class="featurette-icon text-info">📄</div>
+            <h4 class="card-title">Résumé</h4>
+            <p class="card-text">Explore my résumé with detailed education, work, and skills.</p>
+            <a href="#resume" class="btn btn-info">View Résumé</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <div class="featurette-icon text-danger">📊</div>
+            <h4 class="card-title">Projects</h4>
+            <p class="card-text">Featuring a custom scratch page, Tableau graph, and AI-powered web app.</p>
+            <a href="scratch.html" class="btn btn-danger">Explore Projects</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <div class="featurette-icon text-secondary">📬</div>
+            <h4 class="card-title">Contact</h4>
+            <p class="card-text">raceyoung@email.com<br>LinkedIn | GitHub | More</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Resume Section -->
+    <hr id="resume">
+    <h2 class="my-4">HTML Résumé</h2>
+    <p><strong>Education:</strong> BYU, Info Systems & Finance | GPA: 3.9</p>
+    <p><strong>Work:</strong> Urim Capital, CFO @ Construction, Bitcoin trader</p>
+    <p><strong>Skills:</strong> Python, Google Sheets/Excel, AI, Trading, Spanish</p>
   </div>
+
+  <!-- Bootstrap core JS -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
