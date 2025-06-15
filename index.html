@@ -15,6 +15,16 @@
       font-size: 3rem;
       margin-bottom: 15px;
     }
+    .card-body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+    }
+    .card-text {
+      min-height: 60px;
+    }
   </style>
 </head>
 
@@ -45,7 +55,7 @@
   <!-- Page Content -->
   <div class="container mt-5 pt-5">
     <!-- Heading -->
-    <h1 class="my-4 text-center">Welcome to My Portfolio</h1>
+    <h1 class="my-4 text-center">My Portfolio</h1>
 
     <!-- Featurettes -->
     <div class="row text-center">
@@ -54,7 +64,7 @@
           <div class="card-body">
             <div class="featurette-icon text-primary">🎓</div>
             <h4 class="card-title">Education</h4>
-            <p class="card-text">Herriman High | BYU | School of Accountancy</p>
+            <p class="card-text">Herriman High  |  BYU  |  <em>Marriott School of Accountancy</em></p>
             <a href="education.html" class="btn btn-primary mt-2">Explore Education</a>
           </div>
         </div>
@@ -65,7 +75,7 @@
           <div class="card-body">
             <div class="featurette-icon text-success">💼</div>
             <h4 class="card-title">Experience</h4>
-            <p class="card-text">More coming soon...</p>
+            <p class="card-text">Urim Capital  |  Greg Young Construction  |  Keller Young Luxury Homes</p>
             <a href="experience.html" class="btn btn-success mt-2">Explore Experience</a>
           </div>
         </div>
@@ -76,7 +86,7 @@
           <div class="card-body">
             <div class="featurette-icon text-warning">🏆</div>
             <h4 class="card-title">Accomplishments</h4>
-            <p class="card-text">Proud of how far I’ve come, and excited for what’s next.</p>
+            <p class="card-text">CFO  |  Academic Honors  |  Bitcoin Club Founder  |  Collegiate Basketball Scholarships</p>
             <a href="accomplishments.html" class="btn btn-warning mt-2">See Accomplishments</a>
           </div>
         </div>
@@ -87,8 +97,8 @@
           <div class="card-body">
             <div class="featurette-icon text-info">📄</div>
             <h4 class="card-title">Résumé</h4>
-            <p class="card-text">Explore my résumé with detailed education, work, and skills.</p>
-            <a href="#resume" class="btn btn-info mt-2">View Résumé</a>
+            <p class="card-text">Education  |  Experience  |  Skills</p>
+            <a href="resume.html" class="btn btn-info mt-2">View Résumé</a>
           </div>
         </div>
       </div>
@@ -98,7 +108,7 @@
           <div class="card-body">
             <div class="featurette-icon text-danger">📊</div>
             <h4 class="card-title">Projects</h4>
-            <p class="card-text">Featuring a custom scratch page, Tableau graph, and AI-powered web app.</p>
+            <p class="card-text">Scratch Page  |  Tableau  |  Web App</p>
             <a href="projects.html" class="btn btn-danger mt-2">Explore Projects</a>
           </div>
         </div>
@@ -109,19 +119,12 @@
           <div class="card-body">
             <div class="featurette-icon text-secondary">📬</div>
             <h4 class="card-title">Contact</h4>
-            <p class="card-text">Email | LinkedIn | GitHub</p>
+            <p class="card-text">Email  |  LinkedIn  |  GitHub</p>
             <a href="contact.html" class="btn btn-secondary mt-2">Reach Out</a>
           </div>
         </div>
       </div>
     </div>
-
-    <!-- Resume Section -->
-    <hr id="resume">
-    <h2 class="my-4">HTML Résumé</h2>
-    <p><strong>Education:</strong> BYU, Info Systems & Finance | GPA: 3.9</p>
-    <p><strong>Work:</strong> Urim Capital, CFO @ Construction, Bitcoin trader</p>
-    <p><strong>Skills:</strong> Python, Google Sheets/Excel, AI, Trading, Spanish</p>
   </div>
 
   <!-- Bootstrap core JS -->
