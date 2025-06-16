@@ -50,6 +50,19 @@
       font-weight: bold;
       color: #003f7d;
     }
+    .scripture-box button {
+      margin-top: 1rem;
+      background-color: #0077cc;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+    .scripture-box button:hover {
+      background-color: #005fa3;
+    }
   </style>
 </head>
 <body>
@@ -58,6 +71,7 @@
   <div class="scripture-box" id="scriptureBox">
     <div class="scripture-text" id="text"></div>
     <div class="reference" id="reference"></div>
+    <button onclick="copyScripture()">Copy to Clipboard</button>
   </div>
 
   <script>
@@ -136,6 +150,16 @@
       document.getElementById('text').textContent = '"' + random.text + '"';
       document.getElementById('reference').textContent = random.reference;
       document.getElementById('scriptureBox').style.display = 'block';
+    }
+
+    function copyScripture() {
+      const text = document.getElementById('text').textContent;
+      const reference = document.getElementById('reference').textContent;
+      const fullQuote = `${text} — ${reference}`;
+
+      navigator.clipboard.writeText(fullQuote)
+        .then(() => alert("Scripture copied to clipboard!"))
+        .catch(() => alert("Failed to copy. Please try again."));
     }
   </script>
 </body>
