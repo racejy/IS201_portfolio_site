@@ -1,55 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Faith Verse Generator</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scripture of the Day</title>
   <style>
     body {
-      font-family: 'Georgia', serif;
-      text-align: center;
+      background-color: #f0f4ff;
+      font-family: 'Cambria', serif;
+      color: #333;
       padding: 40px;
-      background-color: #fff9f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
     h1 {
-      color: #ba5d00;
+      color: #00509e;
+      margin-bottom: 1rem;
     }
     button {
-      padding: 10px 20px;
-      background-color: #ffb347;
+      background-color: #00509e;
+      color: white;
       border: none;
-      border-radius: 5px;
+      padding: 12px 24px;
+      font-size: 1rem;
+      border-radius: 8px;
       cursor: pointer;
-      font-weight: bold;
+      margin-bottom: 2rem;
     }
-    #verse {
-      margin-top: 30px;
-      font-size: 1.2em;
-      color: #333;
+    button:hover {
+      background-color: #003f7d;
+    }
+    .scripture-box {
+      max-width: 600px;
+      background: white;
+      border: 1px solid #ccd;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      text-align: center;
+      display: none;
+    }
+    .scripture-text {
+      font-style: italic;
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+    .reference {
+      font-weight: bold;
+      color: #003f7d;
     }
   </style>
 </head>
 <body>
-
-  <h1>Bible Verse Generator</h1>
-  <p>Click below for a random scripture about faith.</p>
-  <button onclick="showVerse()">Give Me a Verse</button>
-
-  <div id="verse"></div>
-
-  <br><br>
-  <a href="index.html">← Back to Main Site</a>
+  <h1>Scripture of the Day</h1>
+  <button onclick="showScripture()">Get Today’s Scripture</button>
+  <div class="scripture-box" id="scriptureBox">
+    <div class="scripture-text" id="text"></div>
+    <div class="reference" id="reference"></div>
+  </div>
 
   <script>
-    const verses = [
-      "Faith is the substance of things hoped for, the evidence of things not seen. – Hebrews 11:1",
-      "With God all things are possible. – Matthew 19:26",
-      "Trust in the Lord with all your heart. – Proverbs 3:5",
-      "Be still and know that I am God. – Psalm 46:10",
-      "Come unto me all ye that labor and are heavy laden, and I will give you rest. – Matthew 11:28"
+    const scriptures = [
+      // Old Testament
+      { text: "The Lord is my shepherd; I shall not want.", reference: "Psalm 23:1" },
+      { text: "Trust in the Lord with all thine heart...", reference: "Proverbs 3:5-6" },
+      { text: "Be strong and of a good courage...", reference: "Joshua 1:9" },
+      { text: "They that wait upon the Lord shall renew their strength...", reference: "Isaiah 40:31" },
+      { text: "I have loved thee with an everlasting love...", reference: "Jeremiah 31:3" },
+      { text: "The Lord will fight for you, you need only to be still.", reference: "Exodus 14:14" },
+      { text: "The Lord bless thee, and keep thee...", reference: "Numbers 6:24-26" },
+      { text: "He hath shewed thee, O man, what is good...", reference: "Micah 6:8" },
+      { text: "Thy word is a lamp unto my feet...", reference: "Psalm 119:105" },
+      { text: "Though your sins be as scarlet, they shall be white as snow.", reference: "Isaiah 1:18" },
+      { text: "Create in me a clean heart, O God...", reference: "Psalm 51:10" },
+      { text: "The name of the Lord is a strong tower...", reference: "Proverbs 18:10" },
+      { text: "The Lord is near to the brokenhearted...", reference: "Psalm 34:18" },
+      { text: "Fear not: for I have redeemed thee...", reference: "Isaiah 43:1" },
+      { text: "The Lord thy God is with thee...", reference: "Zephaniah 3:17" },
+
+      // New Testament
+      { text: "I can do all things through Christ...", reference: "Philippians 4:13" },
+      { text: "For God so loved the world...", reference: "John 3:16" },
+      { text: "Come unto me, all ye that labour...", reference: "Matthew 11:28-30" },
+      { text: "Be ye doers of the word, and not hearers only...", reference: "James 1:22" },
+      { text: "Ask, and it shall be given you...", reference: "Matthew 7:7" },
+      { text: "Jesus wept.", reference: "John 11:35" },
+      { text: "Let your light so shine before men...", reference: "Matthew 5:16" },
+      { text: "If ye love me, keep my commandments.", reference: "John 14:15" },
+      { text: "In the world ye shall have tribulation...", reference: "John 16:33" },
+      { text: "Love your enemies...", reference: "Luke 6:27" },
+      { text: "Blessed are the peacemakers...", reference: "Matthew 5:9" },
+      { text: "I am the way, the truth, and the life...", reference: "John 14:6" },
+      { text: "Faith without works is dead.", reference: "James 2:26" },
+      { text: "With God nothing shall be impossible.", reference: "Luke 1:37" },
+      { text: "Let not your heart be troubled...", reference: "John 14:1" },
+
+      // Book of Mormon
+      { text: "When ye are in the service of your fellow beings...", reference: "Mosiah 2:17" },
+      { text: "Adam fell that men might be...", reference: "2 Nephi 2:25" },
+      { text: "Charity is the pure love of Christ...", reference: "Moroni 7:47" },
+      { text: "If men come unto me I will show unto them their weakness...", reference: "Ether 12:27" },
+      { text: "Men are that they might have joy.", reference: "2 Nephi 2:25" },
+      { text: "Feast upon the words of Christ...", reference: "2 Nephi 32:3" },
+      { text: "I glory in plainness; I glory in truth...", reference: "2 Nephi 33:6" },
+      { text: "Ye must press forward with a steadfastness in Christ...", reference: "2 Nephi 31:20" },
+      { text: "The natural man is an enemy to God...", reference: "Mosiah 3:19" },
+      { text: "Counsel with the Lord in all thy doings...", reference: "Alma 37:6" },
+      { text: "By small and simple things are great things brought to pass.", reference: "Alma 37:6" },
+      { text: "Behold, I say unto you, that by small and simple means...", reference: "Alma 37:6" },
+      { text: "And now, my beloved brethren, I would that ye should come unto Christ...", reference: "Moroni 10:32" },
+      { text: "Faith is things which are hoped for and not seen.", reference: "Ether 12:6" },
+      { text: "He shall go forth, suffering pains and afflictions...", reference: "Alma 7:11" },
+
+      // Doctrine & Covenants
+      { text: "Draw near unto me and I will draw near unto you.", reference: "D&C 88:63" },
+      { text: "If ye are prepared ye shall not fear.", reference: "D&C 38:30" },
+      { text: "I the Lord am bound when ye do what I say...", reference: "D&C 82:10" },
+      { text: "Wherefore, be not weary in well-doing...", reference: "D&C 64:33" },
+      { text: "Let your hearts be comforted...", reference: "D&C 101:16" },
+      { text: "The worth of souls is great in the sight of God.", reference: "D&C 18:10" },
+      { text: "And if men come unto me I will show unto them their weakness...", reference: "Ether 12:27" },
+      { text: "Remember the worth of souls...", reference: "D&C 18:10" },
+      { text: "This is my work and my glory...", reference: "Moses 1:39" },
+      { text: "Organize yourselves; prepare every needful thing...", reference: "D&C 88:119" },
+      { text: "Stand ye in holy places, and be not moved...", reference: "D&C 87:8" },
+      { text: "Fear not what man can do...", reference: "D&C 122:9" },
+      { text: "My Spirit shall not always strive with man...", reference: "D&C 1:33" },
+      { text: "Peace be unto thy soul; thine adversity and thine afflictions shall be but a small moment.", reference: "D&C 121:7" },
+      { text: "Be faithful and stand in the office which I have appointed unto you.", reference: "D&C 81:5" }
     ];
-    function showVerse() {
-      const v = verses[Math.floor(Math.random() * verses.length)];
-      document.getElementById("verse").textContent = v;
+
+    function showScripture() {
+      const random = scriptures[Math.floor(Math.random() * scriptures.length)];
+      document.getElementById('text').textContent = '"' + random.text + '"';
+      document.getElementById('reference').textContent = random.reference;
+      document.getElementById('scriptureBox').style.display = 'block';
     }
   </script>
 </body>
