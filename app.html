@@ -63,6 +63,16 @@
     .scripture-box button:hover {
       background-color: #005fa3;
     }
+    .home-btn {
+      display: inline-block;
+      margin-top: 2rem;
+      color: #00509e;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .home-btn:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -73,6 +83,8 @@
     <div class="reference" id="reference"></div>
     <button onclick="copyScripture()">Copy to Clipboard</button>
   </div>
+
+  <a href="index.html" class="home-btn">← Back to Home</a>
 
   <script>
     const scriptures = [
