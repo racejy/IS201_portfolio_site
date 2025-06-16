@@ -15,33 +15,36 @@ h2 {
   margin-top: 2rem;
 }
 
-nav a {
-  margin-right: 15px;
-  font-weight: bold;
-  color: #0077cc;
+a {
+  color: #00509e;
   text-decoration: none;
 }
 
-nav a:hover {
+a:hover {
   text-decoration: underline;
 }
 
-.box {
-  background-color: #e3f2fd;
-  padding: 20px;
-  margin-bottom: 15px;
-  border-radius: 8px;
-  border-left: 5px solid #0077cc;
+.nav-link {
+  display: inline-block;
+  margin-top: 10px;
+  font-weight: bold;
 }
 
-img {
-  margin-top: 10px;
+.main-img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.header, .intro, .paper-list, .image-section, .video-section, .tableau-section, .anchor-nav, .app-link {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border: 1px solid #ccd;
   border-radius: 10px;
-  border: 2px solid #aaa;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
-iframe {
-  border-radius: 8px;
-  border: 1px solid #888;
-  margin-top: 10px;
+ul, ol {
+  padding-left: 1.5rem;
 }
