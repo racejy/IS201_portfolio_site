@@ -48,3 +48,11 @@ a:hover {
 ul, ol {
   padding-left: 1.5rem;
 }
+
+.paper-item {
+  margin-bottom: 2rem;
+}
+
+.paper-item ul {
+  margin-top: 0.5rem;
+}
